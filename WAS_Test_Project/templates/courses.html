@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+      body {
+        background-color: yellow;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>GA Courses</title>
+  </head>
+  <body>
+    <p>The list of courses provided by the GA program</p>
+    {% if courseList %}
+    {% for course in courseList %}
+      <div>
+        <h1>{{course.courseHeading}}</h1>
+        <p><b>Starting Date: {{course.startDate}}</b></p>
+        <p>{{course.description}}</p>
+      </div>
+    {% endfor %}
+    {% else %}
+    <p>There are no courses!</p>
+    {% endif %}
+  </body>
+</html>
